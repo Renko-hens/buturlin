@@ -1,0 +1,79 @@
+.buttons{
+    
+
+    @include breakpoint('tablet'){
+        position: fixed;
+        z-index: 1;
+        left: rem(0px);
+        width: 100%;
+        padding: rem(0px 20px);
+        bottom: rem(20px);
+    }
+    &__inner{
+        width: 100%;
+        display: flex;
+        flex-direction: space-between;
+        align-items: center;
+       
+        @include breakpoint-lt('tablet'){
+            justify-content: flex-end;
+        }
+        @include breakpoint('tablet'){
+            justify-content: center;
+        }
+        &--address{
+            flex:1;
+            font-size: rem(19px);
+            @include breakpoint('tablet'){
+                font-size: rem(14px);
+            }
+        }
+        &--buttons{
+            display: flex;
+            // @include breakpoint('tablet'){
+            //     display: none;
+            // }
+            > div{
+                @include breakpoint('mobile'){
+                  width: rem(48px);
+                  height: rem(48px);
+                }
+                transition: opacity .3s;
+                left: auto; 
+                right: auto;
+                position: relative;
+                width: rem(55px);
+                height: rem(55px);
+                border: rem(1px) solid #fff;
+                border-radius: 100%;
+                margin-top: rem(0px);
+                &:not(:last-child){
+                    margin-right: rem(40px);
+                }
+                &:active, &:focus{
+                    outline: none;
+                }
+                &:after{
+                    content: '';
+                    position: absolute;
+                    width: rem(15px);
+                    height: rem(15px);
+                    background: url('../img/icons/arrow.svg');
+                    top:50%;
+                    left: 50%;
+                    background-size: contain;
+                }
+                &.swiper-button-prev{
+                    &:after{
+                        transform: translate(-50% , -50%);
+                    }
+                }
+                &.swiper-button-next{
+                    &:after{ 
+                        transform: translate(-50%, -50%) rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

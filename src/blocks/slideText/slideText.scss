@@ -1,0 +1,117 @@
+.slidetext{
+    margin:0 auto;
+    &:not(.images){
+        max-width: rem(752px);
+        width: 100%;
+    }
+    &.images{
+        max-width: rem(994px);
+        width: 100%;
+    }
+    >*{
+        transform: translateY(rem(40px));
+        opacity: 0;
+    }
+    &__title{
+        text-transform: uppercase;
+        font-family: $montserratBold;
+        line-height: 1.1;
+        @include breakpoint-lt('tablet'){
+            font-size: rem(53px);
+        }
+        @include breakpoint('tablet'){
+            font-size: rem(30px);
+        }
+    }
+    &__content{
+        width: 100%;
+        &:not(:first-child){
+            
+            @include breakpoint-lt('tablet'){
+                margin-top: rem(40px);
+            }
+            @include breakpoint('tablet'){
+                margin-top: rem(16px);
+            }
+
+        }
+        
+        &.images{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include breakpoint('tablet'){
+                flex-direction: column;
+            }
+        }
+        &--inner{
+            font-family: $montserratMedium;
+            
+            @include breakpoint-lt('tablet'){
+                font-size: rem(23px);
+            }
+            @include breakpoint('tablet'){
+                font-size: rem(14px);
+            }
+
+            &:not(.images){
+                &:not(:last-child){
+                    
+                    @include breakpoint-lt('tablet'){
+                        margin-bottom: rem(40px);
+                    }
+                    @include breakpoint('tablet'){
+                        margin-bottom: rem(20px);
+                    }
+                }
+            }
+            &.images{
+                width:100%;
+                text-align: center;
+                max-width: rem(298px);
+                
+                svg{
+                   
+                    @include breakpoint-lt('tablet'){
+                        margin-bottom: rem(40px);
+                    }
+                    @include breakpoint('tablet'){
+                        max-width: rem(100px);
+                    }
+                }
+                p{
+                    font-size: rem(19px);
+                    line-height:1.1;
+                    font-size: rem(19px);
+                    @include breakpoint('tablet'){
+                        display: none;
+                    }
+                }
+            }
+            .bold{
+                font-family: $montserratBold;
+            }
+            ul{
+                list-style: none;
+                padding:0px;
+                margin:0px;
+                li{
+                    position: relative;
+                    // padding-left: rem(30px);
+                    &:not(:last-child){
+                        margin-bottom: rem(10px);
+                    }
+                    // &:before{
+                    //     content: '\2014';
+                    //     position: absolute;
+                    //     left: rem(0px);
+                    //     top: rem(0px);
+                    // }
+                }
+            }
+            a{
+                color: inherit;
+            }
+        }
+    }
+}

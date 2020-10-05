@@ -1,0 +1,55 @@
+.logo{
+    width: 100%;
+    height: auto;
+    @include breakpoint-lt('tablet'){
+        max-width: 273px;
+    }
+    &__icon{
+        width: 53px;
+        height: 53px;
+        overflow: hidden;
+        position: fixed;
+        top:50%;
+        left:50%;
+        z-index: 2;
+        transform: translate(-50%, -50%) scale(1.8);
+        .icon{
+            stroke: #fff;
+            stroke-width: 5px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            position: relative;
+            transform: scale(.548);
+            .circle{
+                &-1{
+                    stroke-dasharray: 141;
+                    stroke-dashoffset: 141;
+                }
+                &-2{
+                    stroke-dasharray: 142;
+                    stroke-dashoffset: 142;
+                }
+            }
+            .line{
+                &-1{
+                    stroke-dasharray: 123;
+                    stroke-dashoffset: 123;
+                }
+                &-2{
+                    stroke-dasharray: 125;
+                    stroke-dashoffset: 125;
+                }
+            }
+            .letter{
+                &-1{
+                    stroke-dasharray: 28;
+                    stroke-dashoffset: 28;
+                }
+                &-2{
+                    stroke-dasharray: 38;
+                    stroke-dashoffset: 38;                
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.header{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    left: rem(0px);
+    justify-content: space-between;
+    z-index: 10;
+    align-items: center;
+    @include breakpoint-lt('tablet'){
+        padding: rem(0px 70px);
+        top: rem(54px);
+        height: rem(63px);
+    }
+    @include breakpoint('tablet'){
+        padding: rem(0px 20px);
+        top: rem(25px);
+        height: rem(46px);
+        flex-direction: column;
+    }
+
+    .phone{
+        @include breakpoint('tablet'){
+            position: fixed;
+            bottom: rem(65px);
+            left: rem(20px);
+        }
+        a{
+            color:#fff;
+           
+            @include breakpoint-lt('tablet'){
+                font-size: rem(23px);
+            }
+            @include breakpoint('tablet'){
+                font-size: rem(16px);
+            }
+        }
+    }
+}

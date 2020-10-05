@@ -1,0 +1,146 @@
+include ../slideText/slideText
+
+-
+    var slidesContent = [
+        {
+            name: 'Компания',
+            title: {
+                text: `Native company`,
+                tag: 'h1',
+            },
+            content: [
+                {
+                    text: `Компания  создана в 2020 году для эффективного управления собственными и привлеченными брендами.`,
+                    tag: 'p',
+                },
+            ],
+        },
+        {
+            name: 'Сообщество',
+            title: {
+                text: `CIVITAS — Сообщество<br>CIVILIS — Гражданский`,
+            },
+            content: [
+                {
+                    text:   `Мы — открытое и прозрачное сообщество. <br>
+                            Мы — команда единомышленников и созидателей, в поиске новых творцов, способных вступить в наше сообщество.`,
+                    tag: 'p',
+                },
+                {
+                    text:   `CIVILIS — CIVILIZATION — Цивилизация (англ.).<br>
+                            Наша команда — это объединение людей, работающих в ваших интересах.`,
+                    tag: 'p',
+                }
+            ],
+        },
+        {
+            name: 'Эксперты',
+            title: {
+                text: `Expert company`,
+            },
+            content: [
+                {
+                    text:   `В составе нашей компании опытные предприниматели и эксперты, которые знают как создавать и развивать успешные бренды.`,
+                    tag: 'p',
+                },
+                {
+                    text: `Название образовано от латинского «sitis vita», что буквально обозначает «жажда жизни». Наша команда экспертов гарантирует высокое качество продуктов, производимых под собственными торговыми марками.`,
+                    tag: 'p',
+                }
+            ],
+        },
+        {
+            name: 'Принцип',
+            title: {
+                text: `Наш основной принцип — native`,
+            },
+            content: [
+                {
+                    text: `В переводе с английского «native» — «родной». Мы стараемся быть ближе к нашей земле, традициям и людям. Имея богатую историю, мы создаем собственную, непременно опираясь на наши истоки и корни.`,
+                    tag: 'p',
+                },
+            ],
+        },
+        {
+            name: 'Миссия',
+            title: {
+                text: `Миссия компании`,
+            },
+            content: [
+                {
+                    text: `Мы ставим перед собой цель изменение качества жизни людей и общества через предоставление нового опыта взаимодействия с привычными и необходимыми продуктами передового уровня, которые мы производим.`,
+                    tag: 'p',
+                },
+                {
+                    text: `Совершенствуйтесь вместе с нами!`,
+                    tag: 'p',
+                    class:'bold',
+                },
+            ],
+        },
+        {
+            name: 'Цели',
+            title: {
+                text: `Наши цели:`,
+            },
+            content: [
+                {
+                    tag: 'ul',
+                    list: [
+                        `Быть передовыми в развитии`,
+                        `Создание современных напитков и продуктов`,
+                        `Создание уникальных предложений для партнёров`,
+                    ]
+                },
+            ],
+        },
+        {
+            name: 'Бренды',
+            images: [
+                {
+
+                    logo: `deli`,
+                    //- desc: 'Интернет-магазин «Гастраном напитков «Бутурлин»',
+                },
+                {
+                    logo: 'vodka',
+                    //- desc: 'Традиционная русская водка «Buturlin 1897»',
+                },
+                {
+                    logo: 'factory',
+                    //- desc: 'Воронежский ликёро-водочный завод «Бутурлиновский»',
+                },
+            ]
+        },
+        {
+            name: 'Контакты',
+            title: {
+                text: `Контакты`,
+            },
+            content: [
+                {
+                    text: `+7 (495) 367-10-04`,
+                    tag: 'a',
+                    href:"tel:84953671004"
+                },
+                {
+                    text: `119421, г.Москва, пр-кт&nbsp;Ленинский, д.&nbsp;111, корп.&nbsp;1, этаж&nbsp;3, пом.&nbsp;26, оф.&nbsp;53`,
+                    tag: 'p',
+                },
+            ],
+        },
+    ]
+
+img(src="./img/slides/image_company.png" style="display: none;")
+img(src="./img/slides/image_expert.png" style="display: none;")
+img(src="./img/slides/image_mis.png" style="display: none;")
+img(src="./img/slides/image_native.png" style="display: none;")
+img(src="./img/slides/image_target.png" style="display: none;")
+
+.slides
+    .slides__content.swiper-container
+        .swiper-wrapper.slides__content--items
+            each slide in slidesContent
+                .swiper-slide.slides__content--items-item(data-nav=slide.name)
+                    .slides__content--items-item-content
+                        +slideText(slide)

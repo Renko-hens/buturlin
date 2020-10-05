@@ -1,0 +1,121 @@
+$circleWidth: rem(152px);
+
+.navigation{
+    position: fixed;
+    bottom: rem(37px);
+    height: rem(50px);
+    z-index: 10;
+    width: 100%;
+    &__circle{
+        width: $circleWidth;
+        height: 100%;
+        border-radius: rem(30px);
+        border:rem(2px) solid #fff;
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        opacity: .2;
+        &:after, &:before{
+            content: '';
+            position: absolute;
+            height: rem(2px);
+            width: 100vw;
+            top:50%;
+            background: #fff;
+        }
+        &:after{
+            right: rem(0px);
+            transform: translate(100%, -50%);
+        }
+        &:before{
+            left: rem(0px);
+            transform: translate(-100%, -50%);
+        }
+    }
+    
+    @include breakpoint('tablet'){
+        display: none;
+    }
+
+    .swiper-pagination{
+        position: static;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        &-bullet{
+            max-width: $circleWidth;
+            width: 100%;
+            height: auto;
+            background: transparent;
+            border-radius: rem(0px);
+            transition: opacity .5s;
+            position: relative;
+            &:not(:last-child){
+                margin-right: rem(20px);
+            }
+            &:active, &:focus{
+                outline: none;
+            }
+            &__dot{
+                width: rem(8px);
+                height: rem(8px);
+                border-radius: 100%;
+                border: rem(4px) solid #fff;
+                position: absolute;
+                top:rem(50%);
+                transform: translate(-50%, -50%);
+                left: rem(0px);
+                transition: border-width .5s, border-color .5s;
+                &:before{
+                    content:'';
+                    position: absolute;
+                    width: rem(0px);
+                    height: rem(0px);
+                    overflow: hidden;
+                    top:50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border: rem(2px) solid $green;
+                    border-radius: 100%;
+                    transition: width .5s, height .5s;
+                    opacity: 0;
+                }
+            }
+            &:before{
+                content: none;
+            }
+            p{
+                transition: transform .5s;
+                font-family: $montserratMedium;
+                font-size: rem(13px);
+                line-height: 1;
+                position: absolute;
+                left: rem(0px);
+                transform: translate(-50%, rem(10px));
+            }
+            &:not(.swiper-pagination-bullet-active){
+                opacity: .7;
+            }
+            &-active{
+                opacity: 1;
+                .swiper-pagination-bullet__dot{
+                    
+                    border-width: rem(2px);
+                    border-color: $green;
+                    width: rem(10px);
+                    height: rem(10px);
+                    &:before{
+                        opacity: 1;
+                        width: rem(30px);
+                        height: rem(30px);
+                    }
+                }
+                p{
+                    color: $green;
+                    transform: translate(rem(30px) ,-50%);
+                }
+            }
+        }
+    }
+}

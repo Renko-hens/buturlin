@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./css/style.css?v=6")
+        link(rel="shortcut icon", href="./favicon.png", type="image/png")
+        link(rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png")
+        title Sivita
+    body
+        .content
+            include ../../blocks/screen/screen
+            include ../../blocks/header/header
+            .screen__bg
+            .content__inner
+                block page
+            include ../../blocks/navigation/navigation
+        script(src="./js/libs/polyfill.min.js")
+        script(src="./js/libs/pixi.min.js")
+        script(src="./js/libs/gsap.min.js")
+        script(src="./js/libs/PixiPlugin.min.js")
+        script(src="./js/libs/swiper.min.js")
+        script(src="./js/app.js?v=6")

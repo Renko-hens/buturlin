@@ -1,0 +1,27 @@
+mixin slideText(data)
+    .slidetext(class=data.images ? 'images' : '')
+        if(data.title)
+            .slidetext__title
+                #{data.title.tag ? data.title.tag : `h2`}!= data.title.text
+        .slidetext__content(class=data.images ? 'images' : '')
+            if data.content
+                each block in data.content
+                    .slidetext__content--inner(class=data.images ? 'images' : '')
+                        if block.tag === 'ul'
+                            ul
+                                each item in block.list
+                                    li!= item
+                        if block.tag === 'a'
+                            #{block.tag}(class=block.class ? block.class : '' href=block.href ? block.href : '')!= block.text
+                        else
+                            #{block.tag}(class=block.class ? block.class : '')!= block.text
+            if data.images
+                each image in data.images
+                    .slidetext__content--inner(class=data.images ? 'images' : '')
+                        if image.logo === 'deli'
+                            include ../../img/logo/deli.svg
+                        if image.logo === 'vodka'
+                            include ../../img/logo/vodka.svg
+                        if image.logo === 'factory'
+                            include ../../img/logo/factory.svg
+                        p!= image.desc
